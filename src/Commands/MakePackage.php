@@ -54,6 +54,8 @@ class MakePackage extends Command
 
         $database = $root . '/database/migrations';
 
+        $config = $root . '/config';
+
         $src = $root . '/src/Http/Controllers';
 
         $controllerNameSpace = $namespace . "/Http/Controllers";
@@ -64,27 +66,44 @@ class MakePackage extends Command
         
         mkdir($resources, 0777, true);
         
-        $this->comment($root . " Created");
+        $this->comment($resources . " Created");
         
         mkdir($database, 0777, true);
         
-        $this->comment($root . " Created");
+        $this->comment($database . " Created");
         
         mkdir($src, 0777, true);
         
-        $this->comment($root . " Created");
+        $this->comment($src . " Created");
+
+        mkdir($config, 0777, true);
+
+        $this->comment($config . " Created");
+
         $controllerNameSpace = str_replace('/', '\\', $controllerNameSpace);
+        
         file_put_contents($root . '/src/Http/routes.php', "<?php\n".view('lpackager::routes', compact('controllerNameSpace', 'package'))->render());
-        $this->comment($root . "Routes Created");
+        
+        $this->comment("Routes Created");
+        
         $controllerNameSpace = str_replace('/', '\\', $controllerNameSpace);
         
         file_put_contents($root . '/src/Http/Controllers/WelcomeController.php', "<?php\n".view('lpackager::WelcomeController', compact('controllerNameSpace', 'package'))->render());
-        $this->comment($root . "Controller Created");
+        
+        $this->comment("Controller Created");
+        
         $namespace = str_replace('/', '\\', $namespace);
         
         file_put_contents($root . '/src/' . $package . 'ServiceProvider.php', "<?php\n".view('lpackager::ServiceProvider', compact('package', 'namespace'))->render());
-        $this->comment($root . "provider Created");
+        
+        $this->comment("provider Created");
+        
         file_put_contents($root . '/resources/views/welcome.blade.php', view('lpackager::welcome')->render());
-        $this->comment($root . "view Created");
+        
+        $this->comment("view Created");
+
+        file_put_contents($config . '/config.php', view('lpackager::config', compact('package', 'path', 'namespace'))->render());
+        
+        $this->comment('Config File Created');
     }
 }
