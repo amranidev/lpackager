@@ -6,6 +6,22 @@ use Illuminate\Console\Command;
 
 class MakePackage extends Command
 {
+
+    /**
+     *  @var $path
+     */ 
+    private $path;
+
+    /**
+     *  @var $fileSystem
+     */ 
+    private $fileSystem;
+
+    /**
+     *  @var generator
+     */ 
+    private $generator;
+
     /**
      * The name and signature of the console command.
      *
@@ -31,6 +47,13 @@ class MakePackage extends Command
     public function __construct()
     {
         parent::__construct();
+        
+        $this->paths = new Path($this->argument('package') 
+                                ,$this->argument('path')
+                                ,$this->argument('namespace'));
+
+        $this->generator = new Generator($this->paths);
+        
     }
 
     /**
@@ -96,7 +119,7 @@ class MakePackage extends Command
         
         file_put_contents($root . '/src/' . $package . 'ServiceProvider.php', "<?php\n".view('lpackager::ServiceProvider', compact('package', 'namespace'))->render());
         
-        $this->comment("provider Created");
+        $this->comment("Provider Created");
         
         file_put_contents($root . '/resources/views/welcome.blade.php', view('lpackager::welcome')->render());
         
