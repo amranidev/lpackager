@@ -53,7 +53,7 @@ class MakePackage extends Command
                                 ,$this->argument('namespace'));
 
         $this->generator = new Generator($this->paths);
-        
+
     }
 
     /**
@@ -63,70 +63,73 @@ class MakePackage extends Command
      */
     public function handle()
     {
-        $package = ucfirst($this->argument('package'));
+        // $package = ucfirst($this->argument('package'));
 
-        $path = $this->argument('path');
+        // $path = $this->argument('path');
         
-        $namespace = $this->argument('namespace');
+        // $namespace = $this->argument('namespace');
         
-        $root = base_path() .'/'. $path .'/'.$package;
+        // $root = base_path() .'/'. $path .'/'.$package;
 
-        $this->comment($root);
+        // $this->comment($root);
 
-        $resources = $root . '/resources/views';
+        // $resources = $root . '/resources/views';
 
-        $database = $root . '/database/migrations';
+        // $database = $root . '/database/migrations';
 
-        $config = $root . '/config';
+        // $config = $root . '/config';
 
-        $src = $root . '/src/Http/Controllers';
+        // $src = $root . '/src/Http/Controllers';
 
-        $controllerNameSpace = $namespace . "/Http/Controllers";
+        // $controllerNameSpace = $namespace . "/Http/Controllers";
         
-        mkdir($root);
+        // mkdir($root);
 
-        $this->comment($root . " Created");
+        // $this->comment($root . " Created");
         
-        mkdir($resources, 0777, true);
+        // mkdir($resources, 0777, true);
         
-        $this->comment($resources . " Created");
+        // $this->comment($resources . " Created");
         
-        mkdir($database, 0777, true);
+        // mkdir($database, 0777, true);
         
-        $this->comment($database . " Created");
+        // $this->comment($database . " Created");
         
-        mkdir($src, 0777, true);
+        // mkdir($src, 0777, true);
         
-        $this->comment($src . " Created");
+        // $this->comment($src . " Created");
 
-        mkdir($config, 0777, true);
+        // mkdir($config, 0777, true);
 
-        $this->comment($config . " Created");
+        // $this->comment($config . " Created");
 
-        $controllerNameSpace = str_replace('/', '\\', $controllerNameSpace);
+        // $controllerNameSpace = str_replace('/', '\\', $controllerNameSpace);
         
-        file_put_contents($root . '/src/Http/routes.php', "<?php\n".view('lpackager::routes', compact('controllerNameSpace', 'package'))->render());
+        // file_put_contents($root . '/src/Http/routes.php', "<?php\n".view('lpackager::routes', compact('controllerNameSpace', 'package'))->render());
         
-        $this->comment("Routes Created");
+        // $this->comment("Routes Created");
         
-        $controllerNameSpace = str_replace('/', '\\', $controllerNameSpace);
+        // $controllerNameSpace = str_replace('/', '\\', $controllerNameSpace);
         
-        file_put_contents($root . '/src/Http/Controllers/WelcomeController.php', "<?php\n".view('lpackager::WelcomeController', compact('controllerNameSpace', 'package'))->render());
+        // file_put_contents($root . '/src/Http/Controllers/WelcomeController.php', "<?php\n".view('lpackager::WelcomeController', compact('controllerNameSpace', 'package'))->render());
         
-        $this->comment("Controller Created");
+        // $this->comment("Controller Created");
         
-        $namespace = str_replace('/', '\\', $namespace);
+        // $namespace = str_replace('/', '\\', $namespace);
         
-        file_put_contents($root . '/src/' . $package . 'ServiceProvider.php', "<?php\n".view('lpackager::ServiceProvider', compact('package', 'namespace'))->render());
+        // file_put_contents($root . '/src/' . $package . 'ServiceProvider.php', "<?php\n".view('lpackager::ServiceProvider', compact('package', 'namespace'))->render());
         
-        $this->comment("Provider Created");
+        // $this->comment("Provider Created");
         
-        file_put_contents($root . '/resources/views/welcome.blade.php', view('lpackager::welcome')->render());
+        // file_put_contents($root . '/resources/views/welcome.blade.php', view('lpackager::welcome')->render());
         
-        $this->comment("view Created");
+        // $this->comment("view Created");
 
-        file_put_contents($config . '/config.php', view('lpackager::config', compact('package', 'path', 'namespace'))->render());
+        // file_put_contents($config . '/config.php', view('lpackager::config', compact('package', 'path', 'namespace'))->render());
         
-        $this->comment('Config File Created');
+        // $this->comment('Config File Created');
+
+
+        
     }
 }
