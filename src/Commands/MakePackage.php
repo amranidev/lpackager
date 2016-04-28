@@ -49,10 +49,9 @@ class MakePackage extends Command
         parent::__construct();
         
         $this->paths = new Path($this->argument('package') 
-                                ,$this->argument('path')
-                                ,$this->argument('namespace'));
+                                ,$this->argument('path'));
 
-        $this->generator = new Generator($this->paths);
+        $this->generator = new Generator($this->paths,$this->argument('namespace'));
 
     }
 
