@@ -1,6 +1,6 @@
 <?php
 
-namespace Amranidev\lpackager\FileSystem;
+namespace Amranidev\Lpackager\FileSystem;
 
 class Path
 {
@@ -15,7 +15,7 @@ class Path
      * package path
      * 
      * @var path
-     */ 
+     */
     private $path;
 
     /**
@@ -23,10 +23,10 @@ class Path
      * 
      * @param String $package;
      * @param String $path
-     */ 
-    public function __construct($package, $path)
+     */
+    public function __construct($path, $package)
     {
-        $this->package = $package;
+        $this->package = ucfirst($package);
 
         $this->path = $path;
     }
@@ -35,7 +35,7 @@ class Path
      * get package root path
      * 
      * @return Mixed
-     */ 
+     */
     public function root()
     {
         return base_path() . '/' . $this->path . '/' . $this->package;
@@ -84,5 +84,15 @@ class Path
     public function configFile()
     {
         return $this->config() . '/config.php';
+    }
+
+    public function getPackage()
+    {
+        return $this->package;
+    }
+
+    public function getPath()
+    {
+        return $this->path;
     }
 }
