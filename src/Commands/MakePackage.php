@@ -62,16 +62,16 @@ class MakePackage extends Command
         $this->comment("Root generated Successfully");
         
         $generator->resources();
-        $this->comment("resources and views Successfully generated");
+        $this->comment("Resources and views Successfully generated");
         
         $generator->database();
-        $this->comment("database Successfully generated");
+        $this->comment("Database Successfully generated");
         
         $generator->config();
-        $this->comment("config Successfully generated");
+        $this->comment("Config Successfully generated");
         
         $generator->src();
-        $this->comment("source Successfully generated");
+        $this->comment("Source Successfully generated");
         
         $generator->generateFiles();
 
@@ -85,8 +85,8 @@ class MakePackage extends Command
         
         $this->comment("Go a head and :");
         
-        $this->comment("add your package namespace to composer.json");
+        $this->comment("Add your package namespace to composer.json");
         
-        $this->comment("add your ServiceProvider to config/app.php");
+        $this->comment("Add your ServiceProvider to config/app.php");
     }
 }
