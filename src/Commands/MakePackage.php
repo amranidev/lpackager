@@ -77,11 +77,11 @@ class MakePackage extends Command
 
         $this->comment("(WelcomeController,welcome.blade,routes) Successfully generated");
         
-        $this->comment("");
+        $this->comment("-----------------------------------------------");
         
         $this->comment("Done");
         
-        $this->comment("");
+        $this->comment("-----------------------------------------------");
         
         $this->comment("Go a head and :");
         
