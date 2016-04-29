@@ -15,11 +15,6 @@ class MakePackage extends Command
     private $path;
 
     /**
-     *  @var $fileSystem
-     */
-    private $fileSystem;
-
-    /**
      *  @var generator
      */
     private $generator;
@@ -67,20 +62,31 @@ class MakePackage extends Command
         $this->comment("Root generated Successfully");
         
         $generator->resources();
-        $this->comment("Root Successfully generated");
+        $this->comment("resources and views Successfully generated");
         
         $generator->database();
-        $this->comment("Root Successfully generated");
+        $this->comment("database Successfully generated");
         
         $generator->config();
-        $this->comment("Root Successfully generated");
+        $this->comment("config Successfully generated");
         
         $generator->src();
-        $this->comment("Root Successfully generated");
+        $this->comment("source Successfully generated");
         
         $generator->generateFiles();
-        $this->comment("Root Successfully generated");
+
+        $this->comment("(WelcomeController,welcome.blade,routes) Successfully generated");
+        
+        $this->comment("");
         
         $this->comment("Done");
+        
+        $this->comment("");
+        
+        $this->comment("Go a head and :");
+        
+        $this->comment("add your package namespace to composer.json");
+        
+        $this->comment("add your ServiceProvider to config/app.php");
     }
 }
