@@ -16,7 +16,7 @@ class Generator extends Filesystem
     {
         $this->path = $path;
 
-        $this->namespaceParser = new NamespaceParser($namepsace);
+        $this->namespaceParser = new NamespaceParser($namespace);
     }
 
     public function root()
@@ -48,7 +48,7 @@ class Generator extends Filesystem
     {
         $path = $this->path->getPath();
 
-        $namespace = $this->namespaceParser->getNamepsace();
+        $namespace = $this->namespaceParser->getNamespace();
 
         $controllerNameSpace = $this->namespaceParser->controllerNameSpace();
 
@@ -61,5 +61,7 @@ class Generator extends Filesystem
         file_put_contents($this->path->view(), view('lpackager::welcome')->render());
 
         file_put_contents($this->path->configFile(), view('lpackager::config', compact('package', 'path', 'namespace'))->render());
+
+        file_put_contents($this->path->routes(), view('lpackager::routes',compact('package','controllerNameSpace'))->render());
     }
 }
