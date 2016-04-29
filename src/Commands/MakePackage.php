@@ -2,6 +2,8 @@
 
 namespace Amranidev\Lpackager\Commands;
 
+use Amranidev\Lpackager\FileSystem\Path;
+use Amranidev\Lpackager\Generator\Generator;
 use Illuminate\Console\Command;
 
 class MakePackage extends Command
@@ -9,17 +11,17 @@ class MakePackage extends Command
 
     /**
      *  @var $path
-     */ 
+     */
     private $path;
 
     /**
      *  @var $fileSystem
-     */ 
+     */
     private $fileSystem;
 
     /**
      *  @var generator
-     */ 
+     */
     private $generator;
 
     /**
@@ -47,12 +49,6 @@ class MakePackage extends Command
     public function __construct()
     {
         parent::__construct();
-        
-        $this->paths = new Path($this->argument('package') 
-                                ,$this->argument('path'));
-
-        $this->generator = new Generator($this->paths,$this->argument('namespace'));
-
     }
 
     /**
@@ -62,73 +58,29 @@ class MakePackage extends Command
      */
     public function handle()
     {
-        // $package = ucfirst($this->argument('package'));
+        $path = new Path($this->argument('path'), $this->argument('package'));
 
-        // $path = $this->argument('path');
+        $generator = new Generator($path, $this->argument('namespace'));
         
-        // $namespace = $this->argument('namespace');
-        
-        // $root = base_path() .'/'. $path .'/'.$package;
+        $generator->root();
 
-        // $this->comment($root);
-
-        // $resources = $root . '/resources/views';
-
-        // $database = $root . '/database/migrations';
-
-        // $config = $root . '/config';
-
-        // $src = $root . '/src/Http/Controllers';
-
-        // $controllerNameSpace = $namespace . "/Http/Controllers";
+        $this->comment("Root generated Successfully");
         
-        // mkdir($root);
-
-        // $this->comment($root . " Created");
+        $generator->resources();
+        $this->comment("Root Successfully generated");
         
-        // mkdir($resources, 0777, true);
+        $generator->database();
+        $this->comment("Root Successfully generated");
         
-        // $this->comment($resources . " Created");
+        $generator->config();
+        $this->comment("Root Successfully generated");
         
-        // mkdir($database, 0777, true);
+        $generator->src();
+        $this->comment("Root Successfully generated");
         
-        // $this->comment($database . " Created");
+        $generator->generateFiles();
+        $this->comment("Root Successfully generated");
         
-        // mkdir($src, 0777, true);
-        
-        // $this->comment($src . " Created");
-
-        // mkdir($config, 0777, true);
-
-        // $this->comment($config . " Created");
-
-        // $controllerNameSpace = str_replace('/', '\\', $controllerNameSpace);
-        
-        // file_put_contents($root . '/src/Http/routes.php', "<?php\n".view('lpackager::routes', compact('controllerNameSpace', 'package'))->render());
-        
-        // $this->comment("Routes Created");
-        
-        // $controllerNameSpace = str_replace('/', '\\', $controllerNameSpace);
-        
-        // file_put_contents($root . '/src/Http/Controllers/WelcomeController.php', "<?php\n".view('lpackager::WelcomeController', compact('controllerNameSpace', 'package'))->render());
-        
-        // $this->comment("Controller Created");
-        
-        // $namespace = str_replace('/', '\\', $namespace);
-        
-        // file_put_contents($root . '/src/' . $package . 'ServiceProvider.php', "<?php\n".view('lpackager::ServiceProvider', compact('package', 'namespace'))->render());
-        
-        // $this->comment("Provider Created");
-        
-        // file_put_contents($root . '/resources/views/welcome.blade.php', view('lpackager::welcome')->render());
-        
-        // $this->comment("view Created");
-
-        // file_put_contents($config . '/config.php', view('lpackager::config', compact('package', 'path', 'namespace'))->render());
-        
-        // $this->comment('Config File Created');
-
-
-        
+        $this->comment("Done");
     }
 }
