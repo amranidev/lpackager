@@ -62,6 +62,6 @@ class Generator extends Filesystem
 
         file_put_contents($this->path->configFile(), view('lpackager::config', compact('package', 'path', 'namespace'))->render());
 
-        file_put_contents($this->path->routes(), view('lpackager::routes',compact('package','controllerNameSpace'))->render());
+        file_put_contents($this->path->routes(),"<?php\n" view('lpackager::routes',compact('package','controllerNameSpace'))->render());
     }
 }
