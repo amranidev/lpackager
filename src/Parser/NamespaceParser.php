@@ -16,7 +16,7 @@ class NamespaceParser
 	{
 		$controllerNameSpace = $this->namespace . "/Http/Controllers";
 
-		return str_replace('/', '\\', $controllerNameSpace)
+		return str_replace('/', '\\', $controllerNameSpace);
 	}
 
 	public function getNamespace()
