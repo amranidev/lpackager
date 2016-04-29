@@ -1,6 +1,6 @@
 <?php
 
-namespace Armandiev\Lpackager\FileSystem;
+namespace Amranidev\Lpackager\FileSystem;
 
 class Filesystem extends \Exception
 {
