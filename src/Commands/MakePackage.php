@@ -54,33 +54,39 @@ class MakePackage extends Command
         $generator = new Generator($path, $this->argument('namespace'));
 
         //generate root directory
-        $generator->root();
-        $this->comment("Root directory Successfully generated");
+
+        $this->comment($generator->root());
         
         //generate resources directory
-        $generator->resources();
-        $this->comment("Resources and views directory Successfully generated");
+
+        $this->comment($generator->resources());
         
         //generate database directory
-        $generator->database();
-        $this->comment("Database directory Successfully generated");
+
+        $this->comment($generator->database());
         
         //generate config directory
-        $generator->config();
-        $this->comment("Config directory Successfully generated");
+
+        $this->comment($generator->config());
         
         //generate src directory
-        $generator->src();
-        $this->comment("Source directory Successfully generated");
-        
-        //generate Controller blade and routes
-        $generator->generateFiles();
 
-        $this->comment("(WelcomeController,welcome.blade,routes) Successfully generated");
+        $this->comment($generator->src());
         
+        //generate WelcomeController
+        $this->comment($generator->generateWelcomeController());
+        //generate ServiceProvider
+        $this->comment($generator->generateServiceProvider());
+        //generate WelcomeView
+        $this->comment($generator->generateView());
+        //generate config file
+        $this->comment($generator->generateConfig());
+        //generate routes file
+        $this->comment($generator->generateRoute());
+
         $this->comment("-----------------------------------------------");
         
-        $this->comment("Done");
+        $this->comment("------------------ Done -----------------------");
         
         $this->comment("-----------------------------------------------");
         
