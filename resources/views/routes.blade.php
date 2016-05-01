@@ -1,3 +1,10 @@
+/*
+ |-----------------------------------------------------
+ | {{$package}} Routes
+ |-----------------------------------------------------
+ | 
+ | Here is where {{$package}} package routes.
+ | 
+ */ 
 
-
-Route::get('{{$package}}','\{{$controllerNameSpace}}\WelcomeController@index');
+Route::get('{{lcfirst($package)}}','\{{$controllerNameSpace}}\WelcomeController@index');
