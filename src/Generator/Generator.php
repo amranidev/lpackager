@@ -43,6 +43,8 @@ class Generator extends Filesystem
     public function root()
     {
         $this->makeDir($this->path->root());
+
+        return $this->path->root() . " : successfully generated";
     }
 
     /**
@@ -51,6 +53,8 @@ class Generator extends Filesystem
     public function resources()
     {
         $this->makeDir($this->path->resources());
+        
+        return $this->path->resources() . " : successfully generated";
     }
 
     /**
@@ -59,6 +63,8 @@ class Generator extends Filesystem
     public function database()
     {
         $this->makeDir($this->path->database());
+
+        return $this->path->database() . " : successfully generated";
     }
 
     /**
@@ -67,6 +73,8 @@ class Generator extends Filesystem
     public function config()
     {
         $this->makeDir($this->path->config());
+
+        return $this->path->config() . " : successfully generated";
     }
 
     /**
@@ -75,31 +83,57 @@ class Generator extends Filesystem
     public function src()
     {
         $this->makeDir($this->path->src());
+
+        return $this->path->src() . " : successfully generated";
     }
 
     /**
-     * generate files
-     * 
-     * @return void
+     * generate welcomeController
      */
-    public function generateFiles()
+    public function generateWelcomeController()
     {
-        $path = $this->path->getPath();
+        $this->make($this->path->controller(), "<?php\n\n" . view('lpackager::WelcomeController', ['controllerNameSpace' => $this->namespaceParser->controllerNameSpace(), 'package' => $this->path->getPackage()])->render());
+        
+        return $this->path->controller() . " : successfully generated";
+    }
 
-        $namespace = $this->namespaceParser->getNamespace();
+    /**
+     * generate ServiceProvider
+     */
+    public function generateServiceProvider()
+    {
+        $this->make($this->path->serviceProvider(), "<?php\n\n" . view('lpackager::ServiceProvider', ['package'=> $this->path->getPAckage(), 'namespace' => $this->namespaceParser->getNamespace()])->render());
+        
+        return $this->path->serviceProvider() . " : successfully generated";
+    }
 
-        $controllerNameSpace = $this->namespaceParser->controllerNameSpace();
+    /**
+     * generate WelcomeView
+     */
+    public function generateView()
+    {
+        $this->make($this->path->view(), "<?php\n\n" . view('lpackager::ServiceProvider', ['package'=> $this->path->getPAckage(), 'namespace' => $this->namespaceParser->getNamespace()])->render());
+    
+        return $this->path->view() . " : successfully generated";
+    }
 
-        $package = $this->path->getPackage();
+    /**
+     * generate Config file
+     */
+    public function generateConfig()
+    {
+        $this->make($this->path->configFile(), "<?php\n\n" . view('lpackager::config', ['package'=> $this->path->getPAckage(), 'namespace' => $this->namespaceParser->getNamespace(), 'path' => $this->path->getPath()])->render());
+        
+        return $this->path->configFile() . " : successfully generated";
+    }
 
-        file_put_contents($this->path->controller(), "<?php\n\n" . view('lpackager::WelcomeController', compact('controllerNameSpace', 'package'))->render());
-
-        file_put_contents($this->path->serviceProvider(), "<?php\n\n" . view('lpackager::ServiceProvider', compact('package', 'namespace'))->render());
-
-        file_put_contents($this->path->view(), view('lpackager::welcome')->render());
-
-        file_put_contents($this->path->configFile(),"<?php\n\n" . view('lpackager::config', compact('package', 'path', 'namespace'))->render());
-
-        file_put_contents($this->path->routes(), "<?php\n\n" . view('lpackager::routes', compact('package', 'controllerNameSpace'))->render());
+    /**
+     * generate routes file
+     */
+    public function generateRoute()
+    {
+        $this->make($this->path->routes(), "<?php\n\n" . view('lpackager::routes', ['controllerNameSpace' => $this->namespaceParser->controllerNameSpace(), 'package' => $this->path->getPackage()])->render());
+    
+        return $this->path->routes() . " : successfully generated";
     }
 }
