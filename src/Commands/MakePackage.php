@@ -6,18 +6,14 @@ use Amranidev\Lpackager\FileSystem\Path;
 use Amranidev\Lpackager\Generator\Generator;
 use Illuminate\Console\Command;
 
+/**
+ * class MakePackage
+ *
+ * @package lpackager
+ * @author Amrani Houssain <amranidev@gmail.com>
+ */
 class MakePackage extends Command
 {
-
-    /**
-     *  @var $path
-     */
-    private $path;
-
-    /**
-     *  @var generator
-     */
-    private $generator;
 
     /**
      * The name and signature of the console command.
@@ -56,23 +52,28 @@ class MakePackage extends Command
         $path = new Path($this->argument('path'), $this->argument('package'));
 
         $generator = new Generator($path, $this->argument('namespace'));
-        
-        $generator->root();
 
-        $this->comment("Root generated Successfully");
+        //generate root directory
+        $generator->root();
+        $this->comment("Root directory Successfully generated");
         
+        //generate resources directory
         $generator->resources();
-        $this->comment("Resources and views Successfully generated");
+        $this->comment("Resources and views directory Successfully generated");
         
+        //generate database directory
         $generator->database();
-        $this->comment("Database Successfully generated");
+        $this->comment("Database directory Successfully generated");
         
+        //generate config directory
         $generator->config();
-        $this->comment("Config Successfully generated");
+        $this->comment("Config directory Successfully generated");
         
+        //generate src directory
         $generator->src();
-        $this->comment("Source Successfully generated");
+        $this->comment("Source directory Successfully generated");
         
+        //generate Controller blade and routes
         $generator->generateFiles();
 
         $this->comment("(WelcomeController,welcome.blade,routes) Successfully generated");
