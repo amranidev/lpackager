@@ -92,14 +92,14 @@ class Generator extends Filesystem
 
         $package = $this->path->getPackage();
 
-        file_put_contents($this->path->controller(), "<?php\n" . view('lpackager::WelcomeController', compact('controllerNameSpace', 'package'))->render());
+        file_put_contents($this->path->controller(), "<?php\n\n" . view('lpackager::WelcomeController', compact('controllerNameSpace', 'package'))->render());
 
-        file_put_contents($this->path->serviceProvider(), "<?php\n" . view('lpackager::ServiceProvider', compact('package', 'namespace'))->render());
+        file_put_contents($this->path->serviceProvider(), "<?php\n\n" . view('lpackager::ServiceProvider', compact('package', 'namespace'))->render());
 
         file_put_contents($this->path->view(), view('lpackager::welcome')->render());
 
-        file_put_contents($this->path->configFile(), view('lpackager::config', compact('package', 'path', 'namespace'))->render());
+        file_put_contents($this->path->configFile(),"<?php\n\n" . view('lpackager::config', compact('package', 'path', 'namespace'))->render());
 
-        file_put_contents($this->path->routes(), "<?php\n" . view('lpackager::routes', compact('package', 'controllerNameSpace'))->render());
+        file_put_contents($this->path->routes(), "<?php\n\n" . view('lpackager::routes', compact('package', 'controllerNameSpace'))->render());
     }
 }
