@@ -5,7 +5,7 @@ namespace Amranidev\Lpackager\Parser;
 /**
  * class NamespaceParser
  *
- * @package 
+ * @package lpackager
  * @author Amrani Houssain <amranidev@gmail.com>
  */
 class NamespaceParser 
