@@ -112,7 +112,7 @@ class Generator extends Filesystem
      */
     public function generateView()
     {
-        $this->make($this->path->view(), "<?php\n\n" . view('lpackager::ServiceProvider', ['package'=> $this->path->getPAckage(), 'namespace' => $this->namespaceParser->getNamespace()])->render());
+        $this->make($this->path->view(), view('lpackager::welcome', ['package'=> $this->path->getPAckage(), 'namespace' => $this->namespaceParser->getNamespace()])->render());
     
         return $this->path->view() . " : successfully generated";
     }
