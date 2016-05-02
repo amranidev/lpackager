@@ -64,7 +64,7 @@ class Generator extends Filesystem
     {
         $this->makeDir($this->path->database());
 
-        return $this->path->database() . " : successfully generated";
+        return $this->path->database() . " created successfully";
     }
 
     /**
@@ -74,7 +74,7 @@ class Generator extends Filesystem
     {
         $this->makeDir($this->path->config());
 
-        return $this->path->config() . " : successfully generated";
+        return $this->path->config() . " created successfully";
     }
 
     /**
@@ -84,7 +84,7 @@ class Generator extends Filesystem
     {
         $this->makeDir($this->path->src());
 
-        return $this->path->src() . " : successfully generated";
+        return $this->path->src() . " created successfully";
     }
 
     /**
@@ -94,7 +94,7 @@ class Generator extends Filesystem
     {
         $this->make($this->path->controller(), "<?php\n\n" . view('lpackager::WelcomeController', ['controllerNameSpace' => $this->namespaceParser->controllerNameSpace(), 'package' => $this->path->getPackage()])->render());
         
-        return $this->path->controller() . " : successfully generated";
+        return $this->path->controller() . " created successfully";
     }
 
     /**
@@ -104,7 +104,7 @@ class Generator extends Filesystem
     {
         $this->make($this->path->serviceProvider(), "<?php\n\n" . view('lpackager::ServiceProvider', ['package'=> $this->path->getPAckage(), 'namespace' => $this->namespaceParser->getNamespace()])->render());
         
-        return $this->path->serviceProvider() . " : successfully generated";
+        return $this->path->serviceProvider() . " generated successfully";
     }
 
     /**
@@ -114,7 +114,7 @@ class Generator extends Filesystem
     {
         $this->make($this->path->view(), view('lpackager::welcome', ['package'=> $this->path->getPAckage(), 'namespace' => $this->namespaceParser->getNamespace()])->render());
     
-        return $this->path->view() . " : successfully generated";
+        return $this->path->view() . " generated successfully";
     }
 
     /**
@@ -124,7 +124,7 @@ class Generator extends Filesystem
     {
         $this->make($this->path->configFile(), "<?php\n\n" . view('lpackager::config', ['package'=> $this->path->getPAckage(), 'namespace' => $this->namespaceParser->getNamespace(), 'path' => $this->path->getPath()])->render());
         
-        return $this->path->configFile() . " : successfully generated";
+        return $this->path->configFile() . " generated successfully";
     }
 
     /**
@@ -134,6 +134,6 @@ class Generator extends Filesystem
     {
         $this->make($this->path->routes(), "<?php\n\n" . view('lpackager::routes', ['controllerNameSpace' => $this->namespaceParser->controllerNameSpace(), 'package' => $this->path->getPackage()])->render());
     
-        return $this->path->routes() . " : successfully generated";
+        return $this->path->routes() . " generated successfully";
     }
 }
