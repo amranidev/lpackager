@@ -1,0 +1,23 @@
+{
+    "name": "amranidev/scaffold-interface",
+    "description": "A Smart CRUD Generator For Laravel",
+    "homepage": "http://github.com/amranidev/scaffold-interface",
+    "keywords": ["laravel", "framework","package generator" , "package"],
+    "license": "MIT",
+    "authors": [{
+        "name": "Amrani Houssain",
+        "email": "amranidev@gmail.com"
+    }],
+    "require": {
+        "php": ">=5.5.0",
+        "illuminate/support": "~5.1",
+    },
+    "require-dev": {
+        "phpspec/phpspec": "~2.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Amranidev\\Lpackager\\": "src/"
+        }
+    }
+}
