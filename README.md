@@ -1,5 +1,4 @@
 ## lpackager
-============
 
 Lpackager is small package that allows you to generate packages/moduls to your laravel app without forgetting business logic.
 
@@ -45,7 +44,7 @@ In this example we will create a new (package/module) into our application with 
 
   	  `php artisan make:package Customer Kernel "Kernel\Customer"`
 
- 	  [Imgur](http://i.imgur.com/iRR8pF6.png)
+ 	  ![Imgur](http://i.imgur.com/iRR8pF6.png)
 
   2. Register namespace:
      
