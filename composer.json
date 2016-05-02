@@ -1,6 +1,6 @@
 {
-    "name": "amranidev/scaffold-interface",
-    "description": "A Smart CRUD Generator For Laravel",
+    "name": "amranidev/lpackager",
+    "description": "Packages Generator for Laravel",
     "homepage": "http://github.com/amranidev/scaffold-interface",
     "keywords": ["laravel", "framework","package generator" , "package"],
     "license": "MIT",
