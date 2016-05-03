@@ -56,14 +56,14 @@ In this example we will create a new (package/module) into our application with 
             "Kernel\\Customer\\": "Kernel/Customer/src"
         }
      ```
-  3. Register the service provider  
+  3. Register the service provider:
 
      Add the service provider to config/app.php
         
      ```php
      Kernel\Customer\CustomerServiceProvider::class,
      ```
-  4. Finally
+  4. Finally:
        
       Run `composer dump-autoload`
 
