@@ -68,3 +68,5 @@ In this example we will create a new (package/module) into our application with 
       Run `composer dump-autoload`
 
       Visit your package `http://{your-project}/customer`
+
+####Contact : amranidev@gmail.com
