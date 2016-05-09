@@ -34,6 +34,6 @@ class LpackagerServiceProvider extends ServiceProvider
 
     public function register()
     {
-        $this->commands([Commands\MakePackage::class]);
+        $this->commands([Commands\MakePackage::class,Commands\MakeController::class]);
     }
 }
