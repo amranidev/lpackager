@@ -20,7 +20,7 @@ class MakePackage extends Command
      *
      * @var string
      */
-    protected $signature = 'make:package 
+    protected $signature = 'lpackager:package 
                             {package : Package name} 
                             {path : Package path}
                             {namespace : Package namespace}';
