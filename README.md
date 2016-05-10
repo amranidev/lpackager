@@ -36,7 +36,7 @@ Lpackager is small package that allows you to generate packages/moduls to your l
 
 ### II. Quick start
   
-Create new package by `php artisan lpackager:package <PackageName> <Path> <"NameSpace">`  
+Create new package by `php artisan lpackager:package <PackageName> <PackagePath> <"NameSpace">`  
 
 In this example we will create a new (package/module) into our application with a name (Customer)
 
@@ -71,8 +71,10 @@ In this example we will create a new (package/module) into our application with 
 
 ### III. Commands
       
-* Create new Package : `php artisan lpackager:package <PackageName> <Path> <"NameSpace">`
+* Create new Package : `php artisan lpackager:package <PackageName> <PackagePath> <"NameSpace">`
       
-* Create new Controller : `php artisan lpackager:controller <Class> <PackageName> <Path> <"NameSpace">`
+* Create new Controller : `php artisan lpackager:controller <Class> <PackageName> <PackagePath> <"NameSpace">`
+
+* Create new Model : `php artisan lpackager:model <Class> <PackagePath> <NameSpace>`
       
 #### Contact : amranidev@gmail.com
