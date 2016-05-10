@@ -75,6 +75,6 @@ In this example we will create a new (package/module) into our application with 
       
 * Create new Controller : `php artisan lpackager:controller <Class> <PackageName> <PackagePath> <"NameSpace">`
 
-* Create new Model : `php artisan lpackager:model <Class> <PackagePath> <NameSpace>`
+* Create new Model : `php artisan lpackager:model <Class> <PackagePath> <"NameSpace">`
       
 #### Contact : amranidev@gmail.com
