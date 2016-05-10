@@ -34,7 +34,7 @@ Lpackager is small package that allows you to generate packages/moduls to your l
   
     ```
 
-### II. Quick start
+### II. Quick Start
   
 Create new package by `php artisan lpackager:package <PackageName> <PackagePath> <"NameSpace">`  
 
@@ -67,7 +67,9 @@ In this example we will create a new (package/module) into our application with 
        
       Run `composer dump-autoload`
 
-      Visit your package `http://{your-project}/customer`
+      Check if evreything is okey : 
+
+      `http://{your-project-url}/Client` 
 
 ### III. Commands
       
