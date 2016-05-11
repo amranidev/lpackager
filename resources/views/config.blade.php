@@ -31,4 +31,3 @@ return [
 		'loadViews' => '{{$package}}',
 
 	   ];
-
