@@ -2,7 +2,6 @@
 
 namespace Amranidev\Lpackager;
 
-use Illuminate\Foundation\AliasLoader;
 use Illuminate\Support\ServiceProvider;
 
 /**
