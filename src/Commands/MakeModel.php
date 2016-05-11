@@ -5,7 +5,6 @@ namespace Amranidev\Lpackager\Commands;
 use Amranidev\Lpackager\FileSystem\Filesystem;
 use Illuminate\Console\Command;
 
-
 class MakeModel extends Command
 {
 
