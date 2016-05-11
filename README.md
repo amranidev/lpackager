@@ -1,5 +1,7 @@
 ## lpackager
 
+[![SensioLabsInsight](https://insight.sensiolabs.com/projects/5134089a-8f55-42af-baf6-e9a57a76b1b4/big.png)](https://insight.sensiolabs.com/projects/5134089a-8f55-42af-baf6-e9a57a76b1b4)
+
 Lpackager is small package that allows you to generate packages/moduls to your laravel app without forgetting business logic.
 
 ### I. Package Installation
