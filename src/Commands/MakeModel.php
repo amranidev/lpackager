@@ -54,6 +54,6 @@ class MakeModel extends Command
         $fileSystem->make($packagePath, "<?php\n\n".view('lpackager::GeneratorCommands.model',
                                         compact('className', 'nameSpace'))->render());
 
-        $this->comment('Done');
+        $this->comment($packagePath . " created successfully");
     }
 }
