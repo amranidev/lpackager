@@ -20,7 +20,7 @@ Lpackager is small package that allows you to generate packages/moduls to your l
     ```json
     require : {
         "laravel/framework": "5.1.*",
-        "Amranidev/Lpackager": "dev-master"
+        "Amranidev/Lpackager": "v1.0.*"
     }
     ```
     
