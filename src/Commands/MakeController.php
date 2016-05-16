@@ -56,6 +56,6 @@ class MakeController extends Command
         $fileSystem->make($packagePath, "<?php\n\n".view('lpackager::GeneratorCommands.controller',
                                         compact('package', 'className', 'nameSpace'))->render());
 
-        $this->comment('Done');
+        $this->comment($packagePath . " created successfully");
     }
 }
