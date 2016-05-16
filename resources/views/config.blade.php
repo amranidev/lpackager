@@ -1,11 +1,11 @@
 
 /*
  |-------------------------------------------------------------------------
- | {{$package}} config for scaffolding
+ | "{{$package}}" config for scaffolding
  |-------------------------------------------------------------------------
  |
  | You can replace this conf file with config/amranidev/config.php
- | to use scaffold-interface.
+ | to let scaffold-interface interact with "{{$package}}".
  |
  */
 return [
