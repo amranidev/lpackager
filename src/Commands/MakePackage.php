@@ -84,16 +84,12 @@ class MakePackage extends Command
         //generate routes file
         $this->comment($generator->generateRoute());
 
-        $this->comment("-----------------------------------------------");
-        
-        $this->comment("------------------ Done -----------------------");
-        
-        $this->comment("-----------------------------------------------");
+        $this->comment($this->argument('package') . " created successfully");
         
         $this->comment("Go a head and :");
         
-        $this->comment("Add your package namespace to composer.json");
+        $this->comment("Add ".$this->argument('package')." package namespace to composer.json");
         
-        $this->comment("Add your ServiceProvider to config/app.php");
+        $this->comment("Add ".$this->argument('package')."ServiceProvider.php to config/app.php");
     }
 }
