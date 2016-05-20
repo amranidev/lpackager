@@ -4,7 +4,7 @@
 
 [![Latest Stable Version](https://poser.pugx.org/amranidev/lpackager/v/stable)](https://packagist.org/packages/amranidev/lpackager) [![Latest Unstable Version](https://poser.pugx.org/amranidev/lpackager/v/unstable)](https://packagist.org/packages/amranidev/lpackager) [![License](https://poser.pugx.org/amranidev/lpackager/license)](https://packagist.org/packages/amranidev/lpackager)
 
-Lpackager is small package that allows you to generate packages/moduls to your laravel app without forgetting business logic.
+Lpackager is small package that allows you to generate packages/moduls to your laravel app without forgetting business logic. [Split laravel app into pacakges/modules](http://amranidev.github.io/blog/site/split-your-laravel-app/)
 
 ### I. Package Installation
 
