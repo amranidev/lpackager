@@ -7,28 +7,28 @@ use Amranidev\Lpackager\FileSystem\Path;
 use Amranidev\Lpackager\Parser\NamespaceParser;
 
 /**
- * class Generator
+ * class Generator.
  *
- * @package lpackage
  * @author Amrani Houssain <amranidev@gmail.com>
  */
 class Generator extends Filesystem
 {
     /**
-     * path instance
-     * @var $path
+     * path instance.
+     *
+     * @var
      */
     private $path;
 
     /**
-     * namespaceParser instance
+     * namespaceParser instance.
      *
-     * @var $namespaceParser
+     * @var
      */
     private $namespaceParser;
 
     /**
-     * create new Generator instance
+     * create new Generator instance.
      */
     public function __construct(Path $path, $namespace)
     {
@@ -38,102 +38,102 @@ class Generator extends Filesystem
     }
 
     /**
-     * create root directory
+     * create root directory.
      */
     public function root()
     {
         $this->makeDir($this->path->root());
 
-        return $this->path->root() . " : successfully generated";
+        return $this->path->root().' : successfully generated';
     }
 
     /**
-     * create resources directory
+     * create resources directory.
      */
     public function resources()
     {
         $this->makeDir($this->path->resources());
-        
-        return $this->path->resources() . " : successfully generated";
+
+        return $this->path->resources().' : successfully generated';
     }
 
     /**
-     * create database directory
+     * create database directory.
      */
     public function database()
     {
         $this->makeDir($this->path->database());
 
-        return $this->path->database() . " created successfully";
+        return $this->path->database().' created successfully';
     }
 
     /**
-     * create config directory
+     * create config directory.
      */
     public function config()
     {
         $this->makeDir($this->path->config());
 
-        return $this->path->config() . " created successfully";
+        return $this->path->config().' created successfully';
     }
 
     /**
-     * create src directory
+     * create src directory.
      */
     public function src()
     {
         $this->makeDir($this->path->src());
 
-        return $this->path->src() . " created successfully";
+        return $this->path->src().' created successfully';
     }
 
     /**
-     * generate welcomeController
+     * generate welcomeController.
      */
     public function generateWelcomeController()
     {
-        $this->make($this->path->controller(), "<?php\n\n" . view('lpackager::WelcomeController', ['controllerNameSpace' => $this->namespaceParser->controllerNameSpace(), 'package' => $this->path->getPackage()])->render());
-        
-        return $this->path->controller() . " created successfully";
+        $this->make($this->path->controller(), "<?php\n\n".view('lpackager::WelcomeController', ['controllerNameSpace' => $this->namespaceParser->controllerNameSpace(), 'package' => $this->path->getPackage()])->render());
+
+        return $this->path->controller().' created successfully';
     }
 
     /**
-     * generate ServiceProvider
+     * generate ServiceProvider.
      */
     public function generateServiceProvider()
     {
-        $this->make($this->path->serviceProvider(), "<?php\n\n" . view('lpackager::ServiceProvider', ['package'=> $this->path->getPAckage(), 'namespace' => $this->namespaceParser->getNamespace()])->render());
-        
-        return $this->path->serviceProvider() . " generated successfully";
+        $this->make($this->path->serviceProvider(), "<?php\n\n".view('lpackager::ServiceProvider', ['package' => $this->path->getPAckage(), 'namespace' => $this->namespaceParser->getNamespace()])->render());
+
+        return $this->path->serviceProvider().' generated successfully';
     }
 
     /**
-     * generate WelcomeView
+     * generate WelcomeView.
      */
     public function generateView()
     {
-        $this->make($this->path->view(), view('lpackager::welcome', ['package'=> $this->path->getPAckage(), 'namespace' => $this->namespaceParser->getNamespace()])->render());
-    
-        return $this->path->view() . " generated successfully";
+        $this->make($this->path->view(), view('lpackager::welcome', ['package' => $this->path->getPAckage(), 'namespace' => $this->namespaceParser->getNamespace()])->render());
+
+        return $this->path->view().' generated successfully';
     }
 
     /**
-     * generate Config file
+     * generate Config file.
      */
     public function generateConfig()
     {
-        $this->make($this->path->configFile(), "<?php\n\n" . view('lpackager::config', ['package'=> $this->path->getPAckage(), 'namespace' => $this->namespaceParser->getNamespace(), 'path' => $this->path->getPath()])->render());
-        
-        return $this->path->configFile() . " generated successfully";
+        $this->make($this->path->configFile(), "<?php\n\n".view('lpackager::config', ['package' => $this->path->getPAckage(), 'namespace' => $this->namespaceParser->getNamespace(), 'path' => $this->path->getPath()])->render());
+
+        return $this->path->configFile().' generated successfully';
     }
 
     /**
-     * generate routes file
+     * generate routes file.
      */
     public function generateRoute()
     {
-        $this->make($this->path->routes(), "<?php\n\n" . view('lpackager::routes', ['controllerNameSpace' => $this->namespaceParser->controllerNameSpace(), 'package' => $this->path->getPackage()])->render());
-    
-        return $this->path->routes() . " generated successfully";
+        $this->make($this->path->routes(), "<?php\n\n".view('lpackager::routes', ['controllerNameSpace' => $this->namespaceParser->controllerNameSpace(), 'package' => $this->path->getPackage()])->render());
+
+        return $this->path->routes().' generated successfully';
     }
 }

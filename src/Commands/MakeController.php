@@ -7,7 +7,6 @@ use Illuminate\Console\Command;
 
 class MakeController extends Command
 {
-
     /**
      * The name and signature of the console command.
      *
@@ -45,17 +44,17 @@ class MakeController extends Command
     {
         $fileSystem = new Filesystem();
 
-        $nameSpace = $this->argument('namespace') . '\\Http\\Controllers';
+        $nameSpace = $this->argument('namespace').'\\Http\\Controllers';
 
         $package = $this->argument('package');
 
         $className = $this->argument('class');
 
-        $packagePath = $this->argument('path') . '/src/Http/Controllers/' . $className. '.php';
+        $packagePath = $this->argument('path').'/src/Http/Controllers/'.$className.'.php';
 
         $fileSystem->make($packagePath, "<?php\n\n".view('lpackager::GeneratorCommands.controller',
                                         compact('package', 'className', 'nameSpace'))->render());
 
-        $this->comment($packagePath . " created successfully");
+        $this->comment($packagePath.' created successfully');
     }
 }
