@@ -7,8 +7,6 @@ use Illuminate\Console\Command;
 
 class MakeModel extends Command
 {
-
-
     /**
      * The name and signature of the console command.
      *
@@ -49,11 +47,11 @@ class MakeModel extends Command
 
         $className = $this->argument('class');
 
-        $packagePath = $this->argument('path') . '/src/' . $className. '.php';
+        $packagePath = $this->argument('path').'/src/'.$className.'.php';
 
         $fileSystem->make($packagePath, "<?php\n\n".view('lpackager::GeneratorCommands.model',
                                         compact('className', 'nameSpace'))->render());
 
-        $this->comment($packagePath . " created successfully");
+        $this->comment($packagePath.' created successfully');
     }
 }

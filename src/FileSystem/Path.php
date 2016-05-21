@@ -3,32 +3,31 @@
 namespace Amranidev\Lpackager\FileSystem;
 
 /**
- * class Path
+ * class Path.
  *
- * @package lpackager
  * @author Amrani Houssain <amranidev@gmail.com>
  */
 class Path
 {
     /**
-     * package name
-     * 
+     * package name.
+     *
      * @var package
      */
     private $package;
 
     /**
-     * package path
-     * 
+     * package path.
+     *
      * @var path
      */
     private $path;
 
     /**
-     * Create new Path instance
-     * 
-     * @param String $package;
-     * @param String $path
+     * Create new Path instance.
+     *
+     * @param string $package;
+     * @param string $path
      */
     public function __construct($path, $package)
     {
@@ -38,120 +37,120 @@ class Path
     }
 
     /**
-     * get package root path
-     * 
-     * @return String
+     * get package root path.
+     *
+     * @return string
      */
     public function root()
     {
-        return base_path() . '/' . $this->path . '/' . $this->package;
+        return base_path().'/'.$this->path.'/'.$this->package;
     }
 
     /**
-     * get resources path
-     * 
-     * @return String
-     */ 
+     * get resources path.
+     *
+     * @return string
+     */
     public function resources()
     {
-        return $this->root() . '/resources/views';
+        return $this->root().'/resources/views';
     }
 
     /**
-     * get database/migration path
-     * 
-     * @return String
-     */ 
+     * get database/migration path.
+     *
+     * @return string
+     */
     public function database()
     {
-        return $this->root() . '/database/migrations';
+        return $this->root().'/database/migrations';
     }
 
     /**
-     * get config path
-     * 
-     * @return String
-     */ 
+     * get config path.
+     *
+     * @return string
+     */
     public function config()
     {
-        return $this->root() . '/config';
+        return $this->root().'/config';
     }
 
     /**
-     * get src directory
-     * 
-     * @return String
-     */ 
+     * get src directory.
+     *
+     * @return string
+     */
     public function src()
     {
-        return $this->root() . '/src/Http/Controllers';
+        return $this->root().'/src/Http/Controllers';
     }
 
     /**
-     * get reoutes path
-     * 
-     * @return String
-     */ 
+     * get reoutes path.
+     *
+     * @return string
+     */
     public function routes()
     {
-        return $this->root() . '/src/Http/routes.php';
+        return $this->root().'/src/Http/routes.php';
     }
 
     /**
-     * get Cxontroller path
-     * 
-     * @return String
-     */ 
+     * get Cxontroller path.
+     *
+     * @return string
+     */
     public function controller()
     {
-        return $this->root() . '/src/Http/Controllers/WelcomeController.php';
+        return $this->root().'/src/Http/Controllers/WelcomeController.php';
     }
 
     /**
-     * get ServiceProvider path
-     * 
-     * @return String
-     */ 
+     * get ServiceProvider path.
+     *
+     * @return string
+     */
     public function serviceProvider()
     {
-        return $this->root() . '/src/' . $this->package . 'ServiceProvider.php';
+        return $this->root().'/src/'.$this->package.'ServiceProvider.php';
     }
 
     /**
-     * get view path
-     * 
-     * @return String
-     */ 
+     * get view path.
+     *
+     * @return string
+     */
     public function view()
     {
-        return $this->root() . '/resources/views/welcome.blade.php';
+        return $this->root().'/resources/views/welcome.blade.php';
     }
 
     /**
-     * get config file
-     * 
-     * @return String
-     */ 
+     * get config file.
+     *
+     * @return string
+     */
     public function configFile()
     {
-        return $this->config() . '/config.php';
+        return $this->config().'/config.php';
     }
 
     /**
-     * get package name
-     * 
-     * @return String
-     */ 
+     * get package name.
+     *
+     * @return string
+     */
     public function getPackage()
     {
         return $this->package;
     }
 
     /**
-     * get path
-     * 
-     * @return String
-     */ 
+     * get path.
+     *
+     * @return string
+     */
     public function getPath()
     {
         return $this->path;
