@@ -1,0 +1,28 @@
+language: php
+
+sudo: false
+
+php:
+  - 5.5.9
+  - 5.5
+  - 5.6
+  - 7.0
+  - nightly
+  - hhvm
+
+matrix:
+  allow_failures:
+    - php: nightly
+
+env:
+  - TESTBENCH_VERSION=3.0.*
+  - TESTBENCH_VERSION=3.1.*
+  - TESTBENCH_VERSION=3.2.*
+
+before_script:
+  - travis_retry composer self-update
+  - travis_retry composer require --prefer-source --no-interaction --dev "orchestra/testbench:${TESTBENCH_VERSION}"
+
+script:
+  - composer validate
+  - vendor/bin/phpunit
