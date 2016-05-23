@@ -17,4 +17,5 @@ before_script:
 
 script:
   - composer validate
+  - php artisan cache:clear
   - vendor/bin/phpunit
