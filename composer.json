@@ -27,5 +27,5 @@
     },
     "scripts": {
         "testbench": "composer require --dev \"orchestra/testbench=~3.0\""
-    },
+    }
 }
