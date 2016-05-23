@@ -9,7 +9,7 @@ php:
   - hhvm
 
 env:
-  - TESTBENCH_VERSION=3.0.*
+  - TESTBENCH_VERSION=3.2.*
 
 before_script:
   - travis_retry composer self-update
