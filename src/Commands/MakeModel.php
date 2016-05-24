@@ -47,7 +47,7 @@ class MakeModel extends Command
 
         $className = $this->argument('class');
 
-        $packagePath = $this->argument('path').'/src/'.$className.'.php';
+        $packagePath = base_path().'/'.$this->argument('path').'/src/'.$className.'.php';
 
         $fileSystem->make($packagePath, "<?php\n\n".view('lpackager::GeneratorCommands.model',
                                         compact('className', 'nameSpace'))->render());
