@@ -18,10 +18,10 @@ class CommandTest extends TestCase
      */
     public function testMakePackage()
     {
-        $code = $this->artisan("lpackager:package", [
-            'package'   => "Tobo",
+        $code = $this->artisan('lpackager:package', [
+            'package'   => 'Tobo',
             'path'      => 'Kernel',
-            'namespace' => "Kernel\Tobo"
+            'namespace' => "Kernel\Tobo",
         ]);
 
         $this->assertEquals(0, $code);
