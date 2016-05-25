@@ -2,6 +2,8 @@
 
 namespace Amranidev\Lpackager\Tests;
 
+use Amranidev\Lpackager\FileSystem\Path;
+
 class PathTest extends TestCase
 {
     /**
