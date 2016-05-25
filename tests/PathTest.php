@@ -2,48 +2,46 @@
 
 namespace Amranidev\Lpackager\Tests;
 
-use Amranidev\Lpackager\Tests\TestCase;
-
 class PathTest extends TestCase
 {
-	/**
-	 * package path.
-	 * 
-	 * @var $packagePath
-	 */ 
+    /**
+     * package path.
+     *
+     * @var
+     */
     public $packagePath;
 
     /**
      * package name.
-     * 
+     *
      * @var packageName
-     */ 
+     */
     public $packageName;
 
     /**
      * Path instance.
-     * 
-     * @var $path
-     */ 
+     *
+     * @var
+     */
     public $path;
 
     /**
      * SetUp.
-     */ 
+     */
     public function setUp()
     {
         parent::setUp();
-        
-        $this->packagePath = "Kernel";
-        
-        $this->packageName = "Client";
+
+        $this->packagePath = 'Kernel';
+
+        $this->packageName = 'Client';
 
         $this->path = new Path($this->packagePath, $this->packageName);
     }
 
     /**
      * test root path.
-     */ 
+     */
     public function testRoot()
     {
         $this->assertEquals(base_path().'/'.'Kernel/Client', $this->path->root());
@@ -51,7 +49,7 @@ class PathTest extends TestCase
 
     /**
      * test resources path.
-     */ 
+     */
     public function testResources()
     {
         $this->assertEquals($this->path->root().'/resources/views', $this->path->resources());
@@ -59,7 +57,7 @@ class PathTest extends TestCase
 
     /**
      * test database path.
-     */ 
+     */
     public function testDatabase()
     {
         $this->assertEquals($this->path->root().'/database/migrations', $this->path->database());
@@ -67,7 +65,7 @@ class PathTest extends TestCase
 
     /**
      * test config path.
-     */ 
+     */
     public function testConfig()
     {
         $this->assertEquals($this->path->root().'/config', $this->path->config());
@@ -75,7 +73,7 @@ class PathTest extends TestCase
 
     /**
      * test source controller path.
-     */ 
+     */
     public function testSrc()
     {
         $this->assertEquals($this->path->root().'/src/Http/Controllers', $this->path->src());
@@ -83,7 +81,7 @@ class PathTest extends TestCase
 
     /**
      * test routes path.
-     */ 
+     */
     public function testRoutes()
     {
         $this->assertEquals($this->path->root().'/src/Http/routes.php', $this->path->routes());
@@ -91,7 +89,7 @@ class PathTest extends TestCase
 
     /**
      * test controller path.
-     */ 
+     */
     public function testController()
     {
         $this->assertEquals($this->path->root().'/src/Http/Controllers/WelcomeController.php', $this->path->controller());
@@ -99,7 +97,7 @@ class PathTest extends TestCase
 
     /**
      * test service provider path.
-     */ 
+     */
     public function testServiceProvider()
     {
         $this->assertEquals($this->path->root().'/src/'.$this->packageName.'ServiceProvider.php', $this->path->serviceProvider());
@@ -107,33 +105,33 @@ class PathTest extends TestCase
 
     /**
      * test view path.
-     */ 
+     */
     public function testView()
     {
-    	$this->assertEquals($this->path->resources().'/welcome.blade.php',$this->path->view());
+        $this->assertEquals($this->path->resources().'/welcome.blade.php', $this->path->view());
     }
 
     /**
      * test config file path.
-     */ 
+     */
     public function testConfigFile()
     {
-    	$this->assertEquals($this->path->config().'/config.php',$this->path->configFile());
+        $this->assertEquals($this->path->config().'/config.php', $this->path->configFile());
     }
 
     /**
      * test get package method.
-     */ 
+     */
     public function testGetPackage()
     {
-    	$this->assertEquals($this->packageName,$this->path->getPackage());
+        $this->assertEquals($this->packageName, $this->path->getPackage());
     }
 
     /**
      * test get path method.
-     */ 
+     */
     public function testGetPath()
     {
-    	$this->assertEquals($this->packagePath,$this->path->getPath());
+        $this->assertEquals($this->packagePath, $this->path->getPath());
     }
 }
