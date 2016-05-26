@@ -44,7 +44,7 @@ class Generator extends Filesystem
     {
         $this->makeDir($this->path->root());
 
-        return $this->path->root().' : successfully generated';
+        return $this->path->root().' created successfully';
     }
 
     /**
@@ -54,7 +54,7 @@ class Generator extends Filesystem
     {
         $this->makeDir($this->path->resources());
 
-        return $this->path->resources().' : successfully generated';
+        return $this->path->resources().' created successfully';
     }
 
     /**
@@ -104,7 +104,7 @@ class Generator extends Filesystem
     {
         $this->make($this->path->serviceProvider(), "<?php\n\n".view('lpackager::ServiceProvider', ['package' => $this->path->getPAckage(), 'namespace' => $this->namespaceParser->getNamespace()])->render());
 
-        return $this->path->serviceProvider().' generated successfully';
+        return $this->path->serviceProvider().' created successfully';
     }
 
     /**
@@ -114,7 +114,7 @@ class Generator extends Filesystem
     {
         $this->make($this->path->view(), view('lpackager::welcome', ['package' => $this->path->getPAckage(), 'namespace' => $this->namespaceParser->getNamespace()])->render());
 
-        return $this->path->view().' generated successfully';
+        return $this->path->view().' created successfully';
     }
 
     /**
@@ -124,7 +124,7 @@ class Generator extends Filesystem
     {
         $this->make($this->path->configFile(), "<?php\n\n".view('lpackager::config', ['package' => $this->path->getPAckage(), 'namespace' => $this->namespaceParser->getNamespace(), 'path' => $this->path->getPath()])->render());
 
-        return $this->path->configFile().' generated successfully';
+        return $this->path->configFile().' created successfully';
     }
 
     /**
@@ -134,6 +134,6 @@ class Generator extends Filesystem
     {
         $this->make($this->path->routes(), "<?php\n\n".view('lpackager::routes', ['controllerNameSpace' => $this->namespaceParser->controllerNameSpace(), 'package' => $this->path->getPackage()])->render());
 
-        return $this->path->routes().' generated successfully';
+        return $this->path->routes().' created successfully';
     }
 }
