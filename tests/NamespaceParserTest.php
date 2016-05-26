@@ -3,21 +3,20 @@
 namespace Amranidev\Lpackager\Tests;
 
 use Amranidev\Lpackager\Parser\NamespaceParser;
-use Amranidev\Lpackager\Tests\TestCase;
 
 class NamespaceParserTest extends TestCase
 {
     /**
      * package namespace.
-     * 
-     * @var $namespace
+     *
+     * @var
      */
     public $namespace;
 
     /**
      * NamespaceParser instance.
-     * 
-     * @var $parser
+     *
+     * @var
      */
     public $parser;
 
