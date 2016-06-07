@@ -1,7 +1,7 @@
 
 /*
  |-------------------------------------------------------------------------
- | "{{$package}}" config for scaffolding
+ | "{{$package}}" config for scaffolding.
  |-------------------------------------------------------------------------
  |
  | You can replace this conf file with config/amranidev/config.php
@@ -9,7 +9,11 @@
  |
  */
 return [
-		
+
+		'env' => [
+        	'local',
+    	],
+
 		'package' => '{{$package}}',
 	   
 		'model' => base_path() . '/{{$path}}/{{$package}}/src',
