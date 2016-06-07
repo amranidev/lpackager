@@ -2,7 +2,9 @@
 
 namespace Amranidev\Lpackager\Tests;
 
-abstract class TestCase extends \Orchestra\Testbench\TestCase
+use Orchestra\Testbench\TestCase as OrchestraTestCase;
+
+abstract class TestCase extends OrchestraTestCase
 {
     protected function getPackageProviders($app)
     {
