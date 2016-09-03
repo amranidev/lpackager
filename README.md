@@ -14,7 +14,7 @@ Lpackager is small package that allows you to generate packages/moduls to your l
 1. Run composer require to install Lpackager :
   
     ```
-    composer require Amranidev/Lpackager:dev-master
+    composer require Amranidev/Lpackager
   
     ```
 
@@ -22,7 +22,6 @@ Lpackager is small package that allows you to generate packages/moduls to your l
     
     ```json
     require : {
-        "laravel/framework": "5.2.*",
         "Amranidev/Lpackager": "v1.0.*"
     }
     ```
