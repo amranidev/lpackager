@@ -37,9 +37,9 @@ class Filesystem extends \Exception
 
     /**
      * Make directory.
-     * 
+     *
      * @param string $path
-     * 
+     *
      * @return void
      */
     public function makeDir($path)
@@ -52,10 +52,10 @@ class Filesystem extends \Exception
 
     /**
      * File append.
-     * 
+     *
      * @param string $path
      * @param string $content
-     * 
+     *
      * @return int
      */
     public function append($path, $content)
