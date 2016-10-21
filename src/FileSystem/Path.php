@@ -10,21 +10,21 @@ namespace Amranidev\Lpackager\FileSystem;
 class Path
 {
     /**
-     * package name.
+     * Package name.
      *
-     * @var package
+     * @var string package
      */
     private $package;
 
     /**
-     * package path.
+     * Package path.
      *
-     * @var path
+     * @var string path
      */
     private $path;
 
     /**
-     * Create new Path instance.
+     * Create a new Path instance.
      *
      * @param string $package;
      * @param string $path
@@ -37,7 +37,7 @@ class Path
     }
 
     /**
-     * get package root path.
+     * Get root path.
      *
      * @return string
      */
@@ -47,7 +47,7 @@ class Path
     }
 
     /**
-     * get resources path.
+     * Get resources path.
      *
      * @return string
      */
@@ -57,7 +57,7 @@ class Path
     }
 
     /**
-     * get database/migration path.
+     * Get database/migration path.
      *
      * @return string
      */
@@ -67,7 +67,7 @@ class Path
     }
 
     /**
-     * get config path.
+     * Get config path.
      *
      * @return string
      */
@@ -77,7 +77,7 @@ class Path
     }
 
     /**
-     * get src directory.
+     * Get src path.
      *
      * @return string
      */
@@ -87,7 +87,7 @@ class Path
     }
 
     /**
-     * get reoutes path.
+     * Get reoutes path.
      *
      * @return string
      */
@@ -97,7 +97,7 @@ class Path
     }
 
     /**
-     * get Cxontroller path.
+     * Get Controller path.
      *
      * @return string
      */
@@ -107,7 +107,7 @@ class Path
     }
 
     /**
-     * get ServiceProvider path.
+     * Get ServiceProvider path.
      *
      * @return string
      */
@@ -117,7 +117,7 @@ class Path
     }
 
     /**
-     * get view path.
+     * Get view path.
      *
      * @return string
      */
@@ -127,7 +127,7 @@ class Path
     }
 
     /**
-     * get config file.
+     * Get config file.
      *
      * @return string
      */
@@ -137,7 +137,7 @@ class Path
     }
 
     /**
-     * get package name.
+     * Get package name.
      *
      * @return string
      */
@@ -147,7 +147,7 @@ class Path
     }
 
     /**
-     * get path.
+     * Get path.
      *
      * @return string
      */
