@@ -31,9 +31,9 @@ class LpackagerServiceProvider extends ServiceProvider
 
     /**
      * Register the service provider..
-     * 
+     *
      * @return void
-     */ 
+     */
     public function register()
     {
         $this->commands(['Amranidev\Lpackager\Commands\MakePackage', 'Amranidev\Lpackager\Commands\MakeController', 'Amranidev\Lpackager\Commands\MakeModel']);
