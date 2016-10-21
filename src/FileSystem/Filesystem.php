@@ -24,9 +24,9 @@ class Filesystem extends \Exception
     }
 
     /**
-     * Determine if file exists.
+     * Determine if the file already exists.
      *
-     * @param $file
+     * @param string $file
      *
      * @return bool
      */
@@ -36,7 +36,11 @@ class Filesystem extends \Exception
     }
 
     /**
-     * make Directory.
+     * Make directory.
+     * 
+     * @param string $path
+     * 
+     * @return void
      */
     public function makeDir($path)
     {
@@ -47,7 +51,12 @@ class Filesystem extends \Exception
     }
 
     /**
-     * File Append.
+     * File append.
+     * 
+     * @param string $path
+     * @param string $content
+     * 
+     * @return int
      */
     public function append($path, $content)
     {
