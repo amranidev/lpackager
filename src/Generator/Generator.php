@@ -14,21 +14,26 @@ use Amranidev\Lpackager\Parser\NamespaceParser;
 class Generator extends Filesystem
 {
     /**
-     * path instance.
+     * Path instance.
      *
-     * @var
+     * @var \Amranidev\Lpackager\FileSystem\Path
      */
     private $path;
 
     /**
-     * namespaceParser instance.
+     * NamespaceParser instance.
      *
-     * @var
+     * @var \Amranidev\Lpackager\Parser\NamespaceParser
      */
     private $namespaceParser;
 
     /**
-     * create new Generator instance.
+     * Create new Generator instance.
+     * 
+     * @param \Amranidev\Lpackager\FileSystem\Path
+     * @param string $namespace
+     * 
+     * @return void
      */
     public function __construct(Path $path, $namespace)
     {
@@ -38,7 +43,9 @@ class Generator extends Filesystem
     }
 
     /**
-     * create root directory.
+     * Create root directory.
+     * 
+     * @return string
      */
     public function root()
     {
@@ -48,7 +55,9 @@ class Generator extends Filesystem
     }
 
     /**
-     * create resources directory.
+     * Create resources directory.
+     * 
+     * @return string
      */
     public function resources()
     {
@@ -58,7 +67,9 @@ class Generator extends Filesystem
     }
 
     /**
-     * create database directory.
+     * Create database directory.
+     * 
+     * @return string
      */
     public function database()
     {
@@ -68,7 +79,9 @@ class Generator extends Filesystem
     }
 
     /**
-     * create config directory.
+     * Create config directory.
+     * 
+     * @return string
      */
     public function config()
     {
@@ -78,7 +91,9 @@ class Generator extends Filesystem
     }
 
     /**
-     * create src directory.
+     * Create src directory.
+     * 
+     * @return string
      */
     public function src()
     {
@@ -88,7 +103,9 @@ class Generator extends Filesystem
     }
 
     /**
-     * generate welcomeController.
+     * Generate welcomeController.
+     * 
+     * @return string
      */
     public function generateWelcomeController()
     {
@@ -98,7 +115,9 @@ class Generator extends Filesystem
     }
 
     /**
-     * generate ServiceProvider.
+     * Generate ServiceProvider.
+     * 
+     * @return string
      */
     public function generateServiceProvider()
     {
@@ -108,7 +127,9 @@ class Generator extends Filesystem
     }
 
     /**
-     * generate WelcomeView.
+     * Generate WelcomeView.
+     * 
+     * @return string
      */
     public function generateView()
     {
@@ -118,7 +139,9 @@ class Generator extends Filesystem
     }
 
     /**
-     * generate Config file.
+     * Generate config file.
+     * 
+     * @return string
      */
     public function generateConfig()
     {
@@ -128,7 +151,9 @@ class Generator extends Filesystem
     }
 
     /**
-     * generate routes file.
+     * Generate routes file.
+     * 
+     * @return string
      */
     public function generateRoute()
     {
