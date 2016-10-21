@@ -29,6 +29,11 @@ class LpackagerServiceProvider extends ServiceProvider
         $this->loadViewsFrom(__DIR__.'/../resources/views', 'lpackager');
     }
 
+    /**
+     * Register the service provider..
+     * 
+     * @return void
+     */ 
     public function register()
     {
         $this->commands(['Amranidev\Lpackager\Commands\MakePackage', 'Amranidev\Lpackager\Commands\MakeController', 'Amranidev\Lpackager\Commands\MakeModel']);
