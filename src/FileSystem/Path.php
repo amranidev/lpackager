@@ -93,7 +93,7 @@ class Path
      */
     public function routes()
     {
-        return $this->root().'/src/Http/routes.php';
+        return $this->root().'/routes';
     }
 
     /**
