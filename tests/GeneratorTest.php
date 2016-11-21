@@ -104,12 +104,4 @@ class GeneratorTest extends TestCase
     {
         $this->assertEquals($this->path->configFile().' created successfully', $this->generator->generateConfig());
     }
-
-    /**
-     * test if routes file was generated.
-     */
-    public function testGenerateRoute()
-    {
-        $this->assertEquals($this->path->routes().' created successfully', $this->generator->generateRoute());
-    }
 }

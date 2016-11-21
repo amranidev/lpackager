@@ -86,7 +86,7 @@ class PathTest extends TestCase
      */
     public function testRoutes()
     {
-        $this->assertEquals($this->path->root().'/src/Http/routes.php', $this->path->routes());
+        $this->assertEquals($this->path->root().'/routes', $this->path->routes());
     }
 
     /**
