@@ -157,8 +157,10 @@ class Generator extends Filesystem
      */
     public function generateRoute()
     {
-        $this->make($this->path->routes(), "<?php\n\n".view('lpackager::routes', ['controllerNameSpace' => $this->namespaceParser->controllerNameSpace(), 'package' => $this->path->getPackage()])->render());
+        $this->makeDir($this->path->routes());
 
-        return $this->path->routes().' created successfully';
+        $this->make($this->path->routes().'/web.php', "<?php\n\n".view('lpackager::routes', ['controllerNameSpace' => $this->namespaceParser->controllerNameSpace(), 'package' => $this->path->getPackage()])->render());
+
+        return $this->path->routes().'/web.php created successfully';
     }
 }
