@@ -29,10 +29,10 @@ class Generator extends Filesystem
 
     /**
      * Create new Generator instance.
-     * 
+     *
      * @param \Amranidev\Lpackager\FileSystem\Path
      * @param string $namespace
-     * 
+     *
      * @return void
      */
     public function __construct(Path $path, $namespace)
@@ -44,7 +44,7 @@ class Generator extends Filesystem
 
     /**
      * Create root directory.
-     * 
+     *
      * @return string
      */
     public function root()
@@ -56,7 +56,7 @@ class Generator extends Filesystem
 
     /**
      * Create resources directory.
-     * 
+     *
      * @return string
      */
     public function resources()
@@ -68,7 +68,7 @@ class Generator extends Filesystem
 
     /**
      * Create database directory.
-     * 
+     *
      * @return string
      */
     public function database()
@@ -80,7 +80,7 @@ class Generator extends Filesystem
 
     /**
      * Create config directory.
-     * 
+     *
      * @return string
      */
     public function config()
@@ -92,7 +92,7 @@ class Generator extends Filesystem
 
     /**
      * Create src directory.
-     * 
+     *
      * @return string
      */
     public function src()
@@ -104,7 +104,7 @@ class Generator extends Filesystem
 
     /**
      * Generate welcomeController.
-     * 
+     *
      * @return string
      */
     public function generateWelcomeController()
@@ -116,7 +116,7 @@ class Generator extends Filesystem
 
     /**
      * Generate ServiceProvider.
-     * 
+     *
      * @return string
      */
     public function generateServiceProvider()
@@ -128,7 +128,7 @@ class Generator extends Filesystem
 
     /**
      * Generate WelcomeView.
-     * 
+     *
      * @return string
      */
     public function generateView()
@@ -140,7 +140,7 @@ class Generator extends Filesystem
 
     /**
      * Generate config file.
-     * 
+     *
      * @return string
      */
     public function generateConfig()
@@ -152,7 +152,7 @@ class Generator extends Filesystem
 
     /**
      * Generate routes file.
-     * 
+     *
      * @return string
      */
     public function generateRoute()
