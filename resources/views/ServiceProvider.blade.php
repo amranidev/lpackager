@@ -22,14 +22,14 @@ class {{$package}}ServiceProvider extends ServiceProvider
     {
         // Get namespace
         $nameSpace = $this->app->getNamespace();
-        
+
         AliasLoader::getInstance()->alias('{{$package}}AppController', $nameSpace . 'Http\Controllers\Controller');
-        
+
         // Routes
         $this->app->router->group(['namespace' => $nameSpace . 'Http\Controllers'], function () {
-            require __DIR__ . '/Http/routes.php';
+            require __DIR__ . '/../routes/web.php';
         });
-        
+
         // Load Views
         $this->loadViewsFrom(__DIR__ . '/../resources/views', '{{$package}}');
     }
@@ -37,5 +37,5 @@ class {{$package}}ServiceProvider extends ServiceProvider
     public function register()
     {
     }
-        
+
 }
