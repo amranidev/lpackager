@@ -1,7 +1,6 @@
 ## lpackager
 
-[![SensioLabsInsight](https://insight.sensiolabs.com/projects/5134089a-8f55-42af-baf6-e9a57a76b1b4/big.png)]
-(https://insight.sensiolabs.com/projects/5134089a-8f55-42af-baf6-e9a57a76b1b4)
+[![SensioLabsInsight](https://insight.sensiolabs.com/projects/de72e940-3c06-4664-b84c-425838cd68ea/big.png)](https://insight.sensiolabs.com/projects/de72e940-3c06-4664-b84c-425838cd68ea)
 
 [![Build Status](https://travis-ci.org/amranidev/lpackager.svg?branch=master)](https://travis-ci.org/amranidev/lpackager)
 [![StyleCI](https://styleci.io/repos/57151159/shield?style=flat)](https://styleci.io/repos/57151159)
