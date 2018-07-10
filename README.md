@@ -6,7 +6,7 @@
 [![StyleCI](https://styleci.io/repos/57151159/shield?style=flat)](https://styleci.io/repos/57151159)
 [![Latest Stable Version](https://poser.pugx.org/amranidev/lpackager/v/stable)](https://packagist.org/packages/amranidev/lpackager) [![Latest Unstable Version](https://poser.pugx.org/amranidev/lpackager/v/unstable)](https://packagist.org/packages/amranidev/lpackager) [![License](https://poser.pugx.org/amranidev/lpackager/license)](https://packagist.org/packages/amranidev/lpackager)
 
-Lpackager is a CLI tool that allows you to generate packages/moduls into your laravel app without forgetting business logic. [Split laravel app into pacakges/modules](http://amranidev.github.io/blog/site/split-your-laravel-app/)
+Lpackager is a CLI tool that allows you to generate packages/moduls into your laravel app without forgetting business logic. [Split laravel app into pacakges/modules](http://amranidev.github.io/blog/site/split-your-laravel-app/).
 
 ### I. Package Installation
 
@@ -43,13 +43,13 @@ Lpackager is a CLI tool that allows you to generate packages/moduls into your la
   
 Create new package by `php artisan lpackager:package <PackageName> <PackagePath> <"NameSpace">`  
 
-In this example we will create a new (package/module) into our application with a name (Customer)
+In this example, we will create a new (package/module) into our application with a name (Customer).
 
   1. Create your first package:
 
       `php artisan lpackager:package Customer Kernel "Kernel\Customer"`
 
-    ![Imgur](http://i.imgur.com/iRR8pF6.png)
+![Imgur](http://i.imgur.com/iRR8pF6.png)
 
   2. Register namespace:
      
