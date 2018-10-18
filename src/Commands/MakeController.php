@@ -2,8 +2,8 @@
 
 namespace Amranidev\Lpackager\Commands;
 
-use Amranidev\Lpackager\FileSystem\Filesystem;
 use Illuminate\Console\Command;
+use Amranidev\Lpackager\FileSystem\Filesystem;
 
 class MakeController extends Command
 {
