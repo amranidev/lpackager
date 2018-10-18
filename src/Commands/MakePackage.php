@@ -2,9 +2,9 @@
 
 namespace Amranidev\Lpackager\Commands;
 
+use Illuminate\Console\Command;
 use Amranidev\Lpackager\FileSystem\Path;
 use Amranidev\Lpackager\Generator\Generator;
-use Illuminate\Console\Command;
 
 /**
  * class MakePackage.
