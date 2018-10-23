@@ -17,7 +17,7 @@ class NamespaceParser
     private $namespace;
 
     /**
-     * create new NamespaceParser.
+     * Create new NamespaceParser.
      *
      * @param string $namespace
      */
@@ -27,19 +27,19 @@ class NamespaceParser
     }
 
     /**
-     * get Controller Namespace.
+     * Get Controller Namespace.
      *
      * @return mixed
      */
     public function controllerNameSpace()
     {
-        $controllerNameSpace = $this->namespace.'/Http/Controllers';
+        $controllerNameSpace = $this->namespace . '/Http/Controllers';
 
         return str_replace('/', '\\', $controllerNameSpace);
     }
 
     /**
-     * get Namespace.
+     * Get Namespace.
      *
      * @return mixed
      */
