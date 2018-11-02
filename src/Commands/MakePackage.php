@@ -2,9 +2,9 @@
 
 namespace Amranidev\Lpackager\Commands;
 
+use Illuminate\Console\Command;
 use Amranidev\Lpackager\FileSystem\Path;
 use Amranidev\Lpackager\Generator\Generator;
-use Illuminate\Console\Command;
 
 /**
  * class MakePackage.
@@ -82,12 +82,12 @@ class MakePackage extends Command
         //generate routes file
         $this->comment($generator->generateRoute());
 
-        $this->comment($this->argument('package') . ' created successfully');
+        $this->comment($this->argument('package').' created successfully');
 
         $this->comment('Go a head and:');
 
-        $this->comment('Add ' . $this->argument('package') . ' package namespace to composer.json');
+        $this->comment('Add '.$this->argument('package').' package namespace to composer.json');
 
-        $this->comment('Add ' . $this->argument('package') . 'ServiceProvider.php to config/app.php');
+        $this->comment('Add '.$this->argument('package').'ServiceProvider.php to config/app.php');
     }
 }
