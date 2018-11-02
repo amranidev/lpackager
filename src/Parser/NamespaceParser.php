@@ -29,7 +29,7 @@ class NamespaceParser
     /**
      * Get Controller Namespace.
      *
-     * @return mixed
+     * @return string
      */
     public function controllerNameSpace()
     {
@@ -41,10 +41,10 @@ class NamespaceParser
     /**
      * Get Namespace.
      *
-     * @return mixed
+     * @return string
      */
     public function getNamespace()
     {
-        return $this->namespace;
+        return str_replace('/', '\\', $this->namespace);
     }
 }
