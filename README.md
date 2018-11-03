@@ -74,7 +74,7 @@ In this example, we will create a new (package/module) into our application with
 
       Check if evreything is okey : 
 
-      `http://{your-project-url}/Client` 
+      `http://{your-project-url}/client` 
 
 ### III. Commands
       
