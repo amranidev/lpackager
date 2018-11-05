@@ -74,14 +74,14 @@ In this example, we will create a new (package/module) into our application with
 
       Check if evreything is okey : 
 
-      `http://{your-project-url}/Client` 
+      `http://{your-project-url}/client` 
 
 ### III. Commands
       
 * Create new Package : `php artisan lpackager:package <PackageName> <PackagePath> <"NameSpace">`
       
-* Create new Controller : `php artisan lpackager:controller <Class> <PackageName> <PackagePath> <"NameSpace">`
+* Create new Controller : `php artisan lpackager:controller <ClassName> <PackageName> <PackagePath> <"NameSpace">`
 
-* Create new Model : `php artisan lpackager:model <Class> <PackagePath> <"NameSpace">`
+* Create new Model : `php artisan lpackager:model <ClassName> <PackagePath> <"NameSpace">`
       
 #### Contact : amranidev@gmail.com
